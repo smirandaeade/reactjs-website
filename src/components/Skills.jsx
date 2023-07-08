@@ -8,12 +8,12 @@ import sass from '../assets/sass.svg';
 
 const Skills = (prop) => {
     return (
-        <div id="skills" className="h-screen bgSkills">
-            <div className='h-full flex flex-col xl:flex-row justify-center gap-10 xl:gap-0 xl:h-screen items-center'>
+        <div id="skills" className="h-full bgSkills py-10">
+            <div className='h-auto flex flex-col xl:flex-row justify-center gap-10 xl:gap-0 xl:h-screen items-center'>
                 <div className='flex'>
                     <h2 className="text-2xl text-white">Mis habilidades<span className="text-pink-600"> &#62;<span className={prop.showUnderscore ? 'opacity-100' : 'opacity-0'}>_</span></span></h2>
                 </div>
-                <div className='gap:w-full xl:w-auto justify-items-center grid mx-3 gap-10 grid-cols-2 grid-rows-4 xl:grid-cols-4 xl:grid-rows-2'>
+                <div className='xl:w-auto justify-items-center grid mx-3 gap-10 grid-cols-2 grid-rows-4 xl:grid-cols-4 xl:grid-rows-2'>
                     <img className="bg-white w-36 border-solid rounded-xl p-4 skills-image" src={html5} alt="html5" />
                     <img className="w-36 bg-white border-solid rounded-xl p-4 skills-image" src={css3} alt="css3" />
                     <img className="w-36 bg-white border-solid rounded-xl p-4 skills-image" src={js} alt="js" />

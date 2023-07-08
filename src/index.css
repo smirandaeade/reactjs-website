@@ -114,13 +114,11 @@ body {
 }
 
 .myButton:hover,
-.myButton:focus,
 .myButton:active {
     color: rgb(0, 0, 0);
 }
 
 .myButton:hover:before,
-.myButton:focus:before,
 .myButton:active:before {
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
