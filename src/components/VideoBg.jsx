@@ -1,4 +1,3 @@
-import video1 from '../assets/coverr-coding-sequences-9906-1080p.webm';
 import video1Mp4 from '../assets/coverr-coding-sequences-9906-1080p.mp4';
 import { useEffect } from 'react';
 
@@ -11,7 +10,6 @@ const VideoBg = () => {
     return (
         <div className="video-bg">
             <video id="videoBg" className="video-bg__video" loop muted>
-                <source src={video1} type="video/webm" />
                 <source src={video1Mp4} type="video/mp4" />
             </video>
             <div className="video-bg__overlay" />
