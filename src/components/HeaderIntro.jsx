@@ -19,6 +19,11 @@ const HeaderIntro = (prop) => {
         setSelectedOption(selected);
     };
 
+    const handleSelectMenuOpen = () => {
+        // Desenfocar el select para ocultar el teclado en dispositivos móviles
+        document.activeElement.blur();
+    };
+
     const cvLink = selectedOption.value === 'es' ? 'https://drive.google.com/file/d/17RQPkvE75h_11jl2_Yyy8hSag-qlb2gz/view?usp=drive_link' : 'https://drive.google.com/file/d/1kf32oIE_3eaozLlJEdvIaGTr3wib2eAp/view?usp=drive_link';
 
     return (
@@ -39,7 +44,13 @@ const HeaderIntro = (prop) => {
                         Descargar CV
                     </button>
                 </a>
-                <Select defaultValue={defaultValue} options={options} className="pl-2" onChange={handleOptionChange} />
+                <Select
+                    defaultValue={defaultValue}
+                    options={options}
+                    className="pl-2"
+                    onChange={handleOptionChange}
+                    onMenuOpen={handleSelectMenuOpen} // Agregar el controlador del evento onMenuOpen
+                />
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-transparent text-white py-4 text-center">
                 <h2 className="mb-5 text-2xl">¿Quien soy?</h2>
