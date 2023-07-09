@@ -1,30 +1,17 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
-import Select from 'react-select';
 import ukFlag from '../assets/united-kingdom-svgrepo-com.png';
 import esFlag from '../assets/spain-svgrepo-com.png';
 
 const HeaderIntro = (prop) => {
     const { showUnderscore } = prop;
 
-    const options = [
-        { value: 'es', label: <img src={esFlag} alt="Bandera Español" className="w-4 h-4" /> },
-        { value: 'en', label: <img src={ukFlag} alt="Bandera English" className="w-4 h-4" /> },
-    ];
-    const defaultValue = options.find((option) => option.value === 'es');
-
-    const [selectedOption, setSelectedOption] = useState(defaultValue);
+    const [selectedOption, setSelectedOption] = useState('es');
 
     const handleOptionChange = (selected) => {
         setSelectedOption(selected);
     };
 
-    const handleSelectMenuOpen = () => {
-        // Desenfocar el select para ocultar el teclado en dispositivos móviles
-        document.activeElement.blur();
-    };
-
-    const cvLink = selectedOption.value === 'es' ? 'https://drive.google.com/file/d/17RQPkvE75h_11jl2_Yyy8hSag-qlb2gz/view?usp=drive_link' : 'https://drive.google.com/file/d/1kf32oIE_3eaozLlJEdvIaGTr3wib2eAp/view?usp=drive_link';
+    const cvLink = selectedOption === 'es' ? 'https://drive.google.com/file/d/17RQPkvE75h_11jl2_Yyy8hSag-qlb2gz/view?usp=drive_link' : 'https://drive.google.com/file/d/1kf32oIE_3eaozLlJEdvIaGTr3wib2eAp/view?usp=drive_link';
 
     return (
         <div className="relative flex flex-col xl:flex-row justify-center items-center h-screen">
@@ -44,27 +31,32 @@ const HeaderIntro = (prop) => {
                         Descargar CV
                     </button>
                 </a>
-                <Select
-                    defaultValue={defaultValue}
-                    options={options}
-                    className="pl-2"
-                    onChange={handleOptionChange}
-                    onMenuOpen={handleSelectMenuOpen} // Agregar el controlador del evento onMenuOpen
-                />
+                <div className="pl-2">
+                    <label className="inline-flex items-center">
+                        <input
+                            type="radio"
+                            value="es"
+                            checked={selectedOption === 'es'}
+                            onChange={() => handleOptionChange('es')}
+                            className="form-radio h-4 w-4"
+                        />
+                        <img src={esFlag} alt="Bandera Español" className="pl-1 h-4" />
+                    </label>
+                    <label className="inline-flex items-center ml-2">
+                        <input
+                            type="radio"
+                            value="en"
+                            checked={selectedOption === 'en'}
+                            onChange={() => handleOptionChange('en')}
+                            className="form-radio h-4 w-4"
+                        />
+                        <img src={ukFlag} alt="Bandera English" className="pl-1 h-4" />
+                    </label>
+                </div>
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-transparent text-white py-4 text-center">
                 <h2 className="mb-5 text-2xl">¿Quien soy?</h2>
-                <Link to="about" smooth={true} duration={0} offset={-20} className="text-4xl mt-2 text-pink-600 cursor-pointer">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 mx-auto animate-bounce"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
-                    </svg>
-                </Link>
+                {/* Resto del código */}
             </div>
         </div>
     );
