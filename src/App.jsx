@@ -3,6 +3,7 @@ import About from "./components/About"
 import Skills from "./components/Skills"
 import Contact from "./components/Contact";
 import { useState, useEffect } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [showUnderscore, setShowUnderscore] = useState(true);
@@ -21,6 +22,7 @@ function App() {
       <About />
       <Skills showUnderscore={showUnderscore} setShowUnderscore={setShowUnderscore}/>
       <Contact />
+      <Footer />
     </div>
   )
 }

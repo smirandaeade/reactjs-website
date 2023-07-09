@@ -21,7 +21,7 @@ const About = () => {
             <div className="xl:my-auto">
                 <img className="mx-auto" src={img} alt="imagen del desarrollador" />
             </div>
-            <div className="absolute bottom-3 left-0 w-full bg-transparent text-white py-4 text-center">
+            <div className="absolute bottom-0 left-0 w-full bg-transparent text-white py-4 text-center">
                 <h2 className="mb-5 text-2xl">Habilidades</h2>
                 <Link
                     to="skills"
