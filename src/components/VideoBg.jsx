@@ -9,7 +9,7 @@ const VideoBg = () => {
 
     return (
         <div className="video-bg">
-            <video id="videoBg" className="video-bg__video" autoPlay loop muted>
+            <video id="videoBg" className="video-bg__video" autoPlay playsInline loop muted>
                 <source src={video1Mp4} type="video/mp4" />
             </video>
             <div className="video-bg__overlay" />
