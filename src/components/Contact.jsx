@@ -1,19 +1,49 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Verificar si hay campos vacíos
+        if (!name || !email || !message) {
+            alert('Por favor, completa todos los campos.');
+            return;
+        }
+
+        // Enviar el formulario
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('_replyto', email);
+        formData.append('message', message);
+
+        // Realizar la solicitud de envío aquí, por ejemplo, utilizando fetch o axios
+
+        // Restablecer los campos del formulario después de enviarlo
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
     return (
         <div id="contact" className="h-screen">
             <div className="h-full flex flex-col justify-evenly">
                 <div className="w-full flex justify-center items-center flex-col">
                     <h2>Contacto</h2>
-                    <form action="https://formspree.io/f/xeqbqgyp" method="POST" className="flex flex-col gap-2">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                         <input
                             className="rounded-md p-1 text-black"
                             type="text"
                             name="name"
                             id="name"
                             placeholder="Nombre"
+                            value={name}
+                            onChange={(event) => setName(event.target.value)}
                         />
                         <input
                             className="rounded-md p-1 text-black"
@@ -21,6 +51,8 @@ const Contact = () => {
                             name="_replyto"
                             id="email"
                             placeholder="Email"
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
                         />
                         <textarea
                             className="rounded-md p-1 text-black"
@@ -29,6 +61,8 @@ const Contact = () => {
                             cols="30"
                             rows="10"
                             placeholder="Mensaje"
+                            value={message}
+                            onChange={(event) => setMessage(event.target.value)}
                         ></textarea>
                         <input type="hidden" name="_subject" value="Nuevo mensaje de contacto" />
                         <input type="hidden" name="_next" value="/" />
