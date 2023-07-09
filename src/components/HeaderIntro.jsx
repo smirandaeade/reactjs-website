@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ukFlag from '../assets/united-kingdom-svgrepo-com.png';
 import esFlag from '../assets/spain-svgrepo-com.png';
+import { Link } from 'react-scroll';
 
 const HeaderIntro = (prop) => {
     const { showUnderscore } = prop;
@@ -55,8 +56,18 @@ const HeaderIntro = (prop) => {
                 </div>
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-transparent text-white py-4 text-center">
-                <h2 className="mb-5 text-2xl">¿Quien soy?</h2>
-                {/* Resto del código */}
+                <h2 className="mb-5 text-2xl">¿Quién soy?</h2>
+                <Link
+                    to="about"
+                    smooth={true}
+                    duration={0}
+                    offset={-20}
+                    className="text-4xl mt-2 text-pink-600 cursor-pointer"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+                    </svg>
+                </Link>
             </div>
         </div>
     );
