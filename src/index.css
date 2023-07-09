@@ -10,8 +10,7 @@ body {
     font-family: 'JetBrains Mono', monospace;
     color: white;
     background-color: black;
-
-
+    padding-right: 0px !important;
 }
 
 .video-bg {
