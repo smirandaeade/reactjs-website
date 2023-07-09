@@ -17,7 +17,7 @@ function App() {
 
   }, []);
   return (
-    <div className="max-h-screen">
+    <div className="overflow-x-hidden">
       <Header showUnderscore={showUnderscore} setShowUnderscore={setShowUnderscore} />
       <About />
       <Skills showUnderscore={showUnderscore} setShowUnderscore={setShowUnderscore}/>

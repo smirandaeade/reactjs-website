@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 import logoImage from '../assets/smlogo.png';
 import { Link } from 'react-scroll';
 
@@ -45,11 +44,6 @@ const Navbar = () => {
                     <button><Link onClick={handleLinkClick} to="contact"  smooth={true} duration={0} offset={0} className="block text-black hover:text-pink-600">Contacto</Link></button>
                 </div>
             )}
-            {/* <div className="md:hidden flex justify-center items-center space-x-4 p-4 bg-white fixed bottom-0 left-0 w-full">
-                <a href="#" className="text-gray-800"><FaLinkedin size={24} /></a>
-                <a href="#" className="text-gray-800"><FaInstagram size={24} /></a>
-                <a href="#" className="text-gray-800"><FaGithub size={24} /></a>
-            </div> */}
         </nav>
     );
 };

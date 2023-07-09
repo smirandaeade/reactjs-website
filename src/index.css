@@ -4,16 +4,14 @@
 
 html {
     scroll-behavior: smooth;
-    
 }
 
 body {
     font-family: 'JetBrains Mono', monospace;
     color: white;
     background-color: black;
-    overflow-x: hidden;
-    width: 100%;
-    
+
+
 }
 
 .video-bg {
@@ -42,7 +40,7 @@ body {
     /* Cambia el valor alpha para ajustar la opacidad */
 }
 
-#contact{
+#contact {
     position: relative;
 }
 
